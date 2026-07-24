@@ -72,6 +72,25 @@ Daarnaast levert de integratie onder andere:
 
 De energietellers worden omgerekend van Wh naar kWh en zijn geschikt voor langdurige Home Assistant-statistieken.
 
+## Dashboard voorbeeld
+
+In `examples/lovelace-dashboard.yaml` staat een voorbeeld-dashboard in de stijl van het lokale Janitza-dashboard.
+
+Het dashboard bevat views voor:
+
+- overzicht
+- grafieken
+- netkwaliteit
+- apparaatinfo
+
+Omdat Home Assistant entity IDs per installatie kunnen verschillen, gebruikt het voorbeeld duidelijke placeholders zoals:
+
+- `sensor.janitza_voltage_l1`
+- `sensor.janitza_current_l1`
+- `sensor.janitza_active_power_total`
+
+Vervang deze éénmalig door jouw echte entity IDs uit Home Assistant.
+
 ## Power factor en cosinus phi
 
 Power factor en cosinus phi zijn niet hetzelfde.
