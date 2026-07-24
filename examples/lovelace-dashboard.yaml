@@ -118,9 +118,9 @@ views:
             name: Schijnbare energie
           - entity: sensor.umg_604_pro_192_168_1_30_blindenergie
             name: Blindenergie
-          - entity: sensor.umg_604_pro_192_168_1_30_blindenergie_inductive
+          - entity: sensor.umg_604_pro_192_168_1_30_inductieve_blindenergie
             name: Inductieve blindenergie
-          - entity: sensor.umg_604_pro_192_168_1_30_blindenergie_capacitive
+          - entity: sensor.umg_604_pro_192_168_1_30_capacitieve_blindenergie
             name: Capacitieve blindenergie
 
   - title: Grafieken
@@ -306,7 +306,7 @@ views:
           - entity: sensor.umg_604_pro_192_168_1_30_flagteller
             name: Flagteller
           - entity: sensor.umg_604_pro_192_168_1_30_transientteller
-            name: TransiÃ«ntteller
+            name: Transientteller
 
       - type: entities
         title: Stroomtrafo-instellingen
