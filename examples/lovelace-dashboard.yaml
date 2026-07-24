@@ -36,7 +36,7 @@ views:
           - type: entity
             name: Actief vermogen totaal
             icon: mdi:flash
-            entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_totaal
+            entity: sensor.umg_604_pro_192_168_1_30_vermogen_4
           - type: entity
             name: Power factor totaal
             icon: mdi:angle-acute
@@ -92,14 +92,14 @@ views:
         title: Vermogen
         show_header_toggle: false
         entities:
-          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_vermogen
             name: Actief vermogen L1
-          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_vermogen_2
             name: Actief vermogen L2
-          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_vermogen_3
             name: Actief vermogen L3
           - type: divider
-          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_totaal
+          - entity: sensor.umg_604_pro_192_168_1_30_vermogen_4
             name: Actief vermogen totaal
           - entity: sensor.umg_604_pro_192_168_1_30_reactief_vermogen
             name: Reactief vermogen totaal
@@ -155,7 +155,7 @@ views:
         title: Vermogen
         hours_to_show: 24
         entities:
-          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_totaal
+          - entity: sensor.umg_604_pro_192_168_1_30_vermogen_4
             name: Actief
           - entity: sensor.umg_604_pro_192_168_1_30_reactief_vermogen
             name: Reactief
