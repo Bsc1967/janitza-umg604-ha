@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 import voluptuous as vol
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from homeassistant.config_entries import ConfigFlow
 from homeassistant.const import CONF_HOST, CONF_PORT
 from homeassistant.helpers import selector
 
@@ -21,7 +21,6 @@ from .const import (
     MAX_SCAN_INTERVAL,
     MIN_SCAN_INTERVAL,
 )
-from .modbus import JanitzaConnectionError, JanitzaModbusClient
 
 
 class JanitzaConfigFlow(ConfigFlow, domain=DOMAIN):
@@ -31,7 +30,7 @@ class JanitzaConfigFlow(ConfigFlow, domain=DOMAIN):
 
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
-    ) -> ConfigFlowResult:
+    ) -> dict[str, Any]:
         errors: dict[str, str] = {}
         if user_input is not None:
             user_input[CONF_HOST] = user_input[CONF_HOST].strip()
@@ -39,20 +38,24 @@ class JanitzaConfigFlow(ConfigFlow, domain=DOMAIN):
             user_input[CONF_UNIT_ID] = int(user_input[CONF_UNIT_ID])
             user_input[CONF_SCAN_INTERVAL] = int(user_input[CONF_SCAN_INTERVAL])
             user_input[CONF_ADDRESS_OFFSET] = int(user_input[CONF_ADDRESS_OFFSET])
-            client = JanitzaModbusClient(
-                user_input[CONF_HOST],
-                user_input[CONF_PORT],
-                user_input[CONF_UNIT_ID],
-                user_input[CONF_ADDRESS_OFFSET],
-            )
+            client = None
             try:
+                from .modbus import JanitzaConnectionError, JanitzaModbusClient
+
+                client = JanitzaModbusClient(
+                    user_input[CONF_HOST],
+                    user_input[CONF_PORT],
+                    user_input[CONF_UNIT_ID],
+                    user_input[CONF_ADDRESS_OFFSET],
+                )
                 await client.async_probe()
             except JanitzaConnectionError:
                 errors["base"] = "cannot_connect"
             except Exception:  # Home Assistant requires unknown setup errors to be caught.
                 errors["base"] = "unknown"
             finally:
-                await client.async_close()
+                if client is not None:
+                    await client.async_close()
 
             if not errors:
                 unique_id = (
