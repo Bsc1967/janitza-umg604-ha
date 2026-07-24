@@ -7,6 +7,6 @@
   "issue_tracker": "https://github.com/Bsc1967/janitza-umg604-ha/issues",
   "integration_type": "device",
   "iot_class": "local_polling",
-  "requirements": ["pymodbus==3.11.4"],
-  "version": "0.1.0"
+  "requirements": ["pymodbus==3.11.2"],
+  "version": "0.1.1"
 }
