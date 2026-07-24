@@ -4,6 +4,8 @@ Lokale, alleen-lezen Home Assistant-integratie voor een Janitza UMG 604-PRO via 
 
 Deze repository is bedoeld voor installatie via HACS of handmatig in Home Assistant. De integratie levert sensoren; grafieken en dashboards maak je daarna in Home Assistant zelf.
 
+De integratie bevat lokale Home Assistant brand assets (`icon.png` en `logo.png`) zodat HACS/Home Assistant een herkenbaar logo kan tonen.
+
 ## Installatie via HACS
 
 1. Open **HACS** in Home Assistant.
