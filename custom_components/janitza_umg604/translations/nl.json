@@ -1,0 +1,77 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Verbind met de UMG 604-PRO",
+        "description": "Vul de Modbus TCP-gegevens van de meter in.",
+        "data": {
+          "host": "IP-adres of hostnaam",
+          "port": "TCP-poort",
+          "unit_id": "Modbus unit-ID",
+          "scan_interval": "Uitleesinterval",
+          "address_offset": "Register-offset"
+        },
+        "data_description": {
+          "address_offset": "Gebruik 0 voor Janitza-adressen. Probeer -1 als de meetregisters niet kloppen."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan de meter niet bereiken of uitlezen.",
+      "unknown": "Onverwachte fout tijdens het verbinden."
+    },
+    "abort": {
+      "already_configured": "Deze meter is al geconfigureerd."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "temperature": {"name": "Temperatuur"},
+      "voltage_unbalance": {"name": "Spanningsonbalans"},
+      "current_unbalance": {"name": "Stroomonbalans"},
+      "phase_sequence": {"name": "Fasevolgorde"},
+      "cos_phi_l1": {"name": "Cosinus phi L1"},
+      "cos_phi_l2": {"name": "Cosinus phi L2"},
+      "cos_phi_l3": {"name": "Cosinus phi L3"},
+      "power_factor_l1": {"name": "Power factor L1"},
+      "power_factor_l2": {"name": "Power factor L2"},
+      "power_factor_l3": {"name": "Power factor L3"},
+      "power_factor_average": {"name": "Gemiddelde power factor"},
+      "thd_voltage_l1": {"name": "THD spanning L1"},
+      "thd_voltage_l2": {"name": "THD spanning L2"},
+      "thd_voltage_l3": {"name": "THD spanning L3"},
+      "thd_current_l1": {"name": "THD stroom L1"},
+      "thd_current_l2": {"name": "THD stroom L2"},
+      "thd_current_l3": {"name": "THD stroom L3"},
+      "tdd_current_l1": {"name": "TDD stroom L1"},
+      "tdd_current_l2": {"name": "TDD stroom L2"},
+      "tdd_current_l3": {"name": "TDD stroom L3"},
+      "apparent_energy": {"name": "Schijnbare energie"},
+      "reactive_energy": {"name": "Blindenergie"},
+      "reactive_energy_inductive": {"name": "Inductieve blindenergie"},
+      "reactive_energy_capacitive": {"name": "Capacitieve blindenergie"},
+      "ct_primary_l1": {"name": "Stroomtrafo primair L1"},
+      "ct_primary_l2": {"name": "Stroomtrafo primair L2"},
+      "ct_primary_l3": {"name": "Stroomtrafo primair L3"},
+      "ct_secondary_l1": {"name": "Stroomtrafo secundair L1"},
+      "ct_secondary_l2": {"name": "Stroomtrafo secundair L2"},
+      "ct_secondary_l3": {"name": "Stroomtrafo secundair L3"},
+      "vt_primary_l1": {"name": "Spanningstrafo primair L1"},
+      "vt_primary_l2": {"name": "Spanningstrafo primair L2"},
+      "vt_primary_l3": {"name": "Spanningstrafo primair L3"},
+      "vt_secondary_l1": {"name": "Spanningstrafo secundair L1"},
+      "vt_secondary_l2": {"name": "Spanningstrafo secundair L2"},
+      "vt_secondary_l3": {"name": "Spanningstrafo secundair L3"},
+      "digital_input_1": {"name": "Digitale ingang 1"},
+      "digital_input_2": {"name": "Digitale ingang 2"},
+      "event_count": {"name": "Gebeurtenisteller"},
+      "flag_count": {"name": "Flagteller"},
+      "transient_count": {"name": "Transiëntteller"},
+      "serial_number": {"name": "Serienummer"},
+      "production_number": {"name": "Productienummer"},
+      "device_name": {"name": "Apparaatnaam"},
+      "device_description": {"name": "Apparaatomschrijving"},
+      "firmware": {"name": "Firmware"}
+    }
+  }
+}

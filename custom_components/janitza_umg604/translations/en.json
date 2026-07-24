@@ -1,0 +1,77 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to the UMG 604-PRO",
+        "description": "Enter the meter's Modbus TCP connection details.",
+        "data": {
+          "host": "IP address or hostname",
+          "port": "TCP port",
+          "unit_id": "Modbus unit ID",
+          "scan_interval": "Polling interval",
+          "address_offset": "Register offset"
+        },
+        "data_description": {
+          "address_offset": "Use 0 for Janitza addresses. Try -1 if the registers do not return plausible values."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to or read the meter.",
+      "unknown": "Unexpected error while connecting."
+    },
+    "abort": {
+      "already_configured": "This meter is already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "temperature": {"name": "Temperature"},
+      "voltage_unbalance": {"name": "Voltage unbalance"},
+      "current_unbalance": {"name": "Current unbalance"},
+      "phase_sequence": {"name": "Phase sequence"},
+      "cos_phi_l1": {"name": "Cos phi L1"},
+      "cos_phi_l2": {"name": "Cos phi L2"},
+      "cos_phi_l3": {"name": "Cos phi L3"},
+      "power_factor_l1": {"name": "Power factor L1"},
+      "power_factor_l2": {"name": "Power factor L2"},
+      "power_factor_l3": {"name": "Power factor L3"},
+      "power_factor_average": {"name": "Average power factor"},
+      "thd_voltage_l1": {"name": "Voltage THD L1"},
+      "thd_voltage_l2": {"name": "Voltage THD L2"},
+      "thd_voltage_l3": {"name": "Voltage THD L3"},
+      "thd_current_l1": {"name": "Current THD L1"},
+      "thd_current_l2": {"name": "Current THD L2"},
+      "thd_current_l3": {"name": "Current THD L3"},
+      "tdd_current_l1": {"name": "Current TDD L1"},
+      "tdd_current_l2": {"name": "Current TDD L2"},
+      "tdd_current_l3": {"name": "Current TDD L3"},
+      "apparent_energy": {"name": "Apparent energy"},
+      "reactive_energy": {"name": "Reactive energy"},
+      "reactive_energy_inductive": {"name": "Inductive reactive energy"},
+      "reactive_energy_capacitive": {"name": "Capacitive reactive energy"},
+      "ct_primary_l1": {"name": "Current transformer primary L1"},
+      "ct_primary_l2": {"name": "Current transformer primary L2"},
+      "ct_primary_l3": {"name": "Current transformer primary L3"},
+      "ct_secondary_l1": {"name": "Current transformer secondary L1"},
+      "ct_secondary_l2": {"name": "Current transformer secondary L2"},
+      "ct_secondary_l3": {"name": "Current transformer secondary L3"},
+      "vt_primary_l1": {"name": "Voltage transformer primary L1"},
+      "vt_primary_l2": {"name": "Voltage transformer primary L2"},
+      "vt_primary_l3": {"name": "Voltage transformer primary L3"},
+      "vt_secondary_l1": {"name": "Voltage transformer secondary L1"},
+      "vt_secondary_l2": {"name": "Voltage transformer secondary L2"},
+      "vt_secondary_l3": {"name": "Voltage transformer secondary L3"},
+      "digital_input_1": {"name": "Digital input 1"},
+      "digital_input_2": {"name": "Digital input 2"},
+      "event_count": {"name": "Event count"},
+      "flag_count": {"name": "Flag count"},
+      "transient_count": {"name": "Transient count"},
+      "serial_number": {"name": "Serial number"},
+      "production_number": {"name": "Production number"},
+      "device_name": {"name": "Device name"},
+      "device_description": {"name": "Device description"},
+      "firmware": {"name": "Firmware"}
+    }
+  }
+}
