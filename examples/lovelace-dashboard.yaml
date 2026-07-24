@@ -1,14 +1,15 @@
-# Janitza UMG 604-PRO dashboard voorbeeld voor Home Assistant
+﻿# Janitza UMG 604-PRO dashboard voorbeeld voor Home Assistant
 #
 # Gebruik:
 # 1. Maak in Home Assistant een nieuw dashboard of nieuwe view.
 # 2. Kies "Raw configuration editor".
 # 3. Plak deze YAML.
-# 4. Vervang alle entity_id placeholders hieronder door jouw echte entity IDs.
+# 4. Dit voorbeeld is alvast ingevuld voor de meter UMG 604-PRO (192.168.1.30).
 #
-# Tip:
-# Zoek in Home Assistant bij Instellingen > Apparaten & diensten > Entiteiten op "Janitza",
-# "UMG", "Spanning L1-N" of "Stroom L1".
+# Let op:
+# Enkele entity IDs die niet in de aangeleverde lijst stonden zijn logisch aangevuld.
+# Als een kaart "Entiteit niet gevonden" toont, zoek die sensor in Home Assistant op
+# en vervang alleen die ene entity ID.
 
 title: Janitza UMG 604-PRO
 views:
@@ -31,31 +32,31 @@ views:
           - type: entity
             name: Frequentie
             icon: mdi:sine-wave
-            entity: sensor.janitza_frequency
+            entity: sensor.umg_604_pro_192_168_1_30_frequentie
           - type: entity
             name: Actief vermogen totaal
             icon: mdi:flash
-            entity: sensor.janitza_active_power_total
+            entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_totaal
           - type: entity
             name: Power factor totaal
             icon: mdi:angle-acute
-            entity: sensor.janitza_power_factor_total
+            entity: sensor.umg_604_pro_192_168_1_30_vermogensfactor
           - type: entity
             name: Temperatuur
             icon: mdi:thermometer
-            entity: sensor.janitza_temperature
+            entity: sensor.umg_604_pro_192_168_1_30_temperatuur
 
       - type: entities
         title: Spanningen fase-nul
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_voltage_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_spanning
             name: Spanning L1-N
             icon: mdi:alpha-l-circle
-          - entity: sensor.janitza_voltage_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_spanning_2
             name: Spanning L2-N
             icon: mdi:alpha-l-circle
-          - entity: sensor.janitza_voltage_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_spanning_3
             name: Spanning L3-N
             icon: mdi:alpha-l-circle
 
@@ -63,13 +64,13 @@ views:
         title: Spanningen lijn-lijn
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_voltage_l1_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_spanning_4
             name: Spanning L1-L2
             icon: mdi:vector-line
-          - entity: sensor.janitza_voltage_l2_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_spanning_5
             name: Spanning L2-L3
             icon: mdi:vector-line
-          - entity: sensor.janitza_voltage_l3_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_spanning_6
             name: Spanning L3-L1
             icon: mdi:vector-line
 
@@ -77,13 +78,13 @@ views:
         title: Stromen
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_current_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_stroom
             name: Stroom L1
             icon: mdi:current-ac
-          - entity: sensor.janitza_current_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_stroom_2
             name: Stroom L2
             icon: mdi:current-ac
-          - entity: sensor.janitza_current_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_stroom_3
             name: Stroom L3
             icon: mdi:current-ac
 
@@ -91,35 +92,35 @@ views:
         title: Vermogen
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_active_power_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_l1
             name: Actief vermogen L1
-          - entity: sensor.janitza_active_power_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_l2
             name: Actief vermogen L2
-          - entity: sensor.janitza_active_power_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_l3
             name: Actief vermogen L3
           - type: divider
-          - entity: sensor.janitza_active_power_total
+          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_totaal
             name: Actief vermogen totaal
-          - entity: sensor.janitza_reactive_power_total
+          - entity: sensor.umg_604_pro_192_168_1_30_reactief_vermogen
             name: Reactief vermogen totaal
-          - entity: sensor.janitza_apparent_power_total
+          - entity: sensor.umg_604_pro_192_168_1_30_schijnbaar_vermogen
             name: Schijnbaar vermogen totaal
 
       - type: entities
         title: Energie
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_energy_consumed
+          - entity: sensor.umg_604_pro_192_168_1_30_energie
             name: Afgenomen energie
-          - entity: sensor.janitza_energy_returned
+          - entity: sensor.umg_604_pro_192_168_1_30_energie_2
             name: Teruggeleverde energie
-          - entity: sensor.janitza_apparent_energy
+          - entity: sensor.umg_604_pro_192_168_1_30_schijnbare_energie
             name: Schijnbare energie
-          - entity: sensor.janitza_reactive_energy
+          - entity: sensor.umg_604_pro_192_168_1_30_blindenergie
             name: Blindenergie
-          - entity: sensor.janitza_reactive_energy_inductive
+          - entity: sensor.umg_604_pro_192_168_1_30_blindenergie_inductive
             name: Inductieve blindenergie
-          - entity: sensor.janitza_reactive_energy_capacitive
+          - entity: sensor.umg_604_pro_192_168_1_30_blindenergie_capacitive
             name: Capacitieve blindenergie
 
   - title: Grafieken
@@ -132,44 +133,44 @@ views:
         title: Spanning fase-nul
         hours_to_show: 24
         entities:
-          - entity: sensor.janitza_voltage_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_spanning
             name: L1-N
-          - entity: sensor.janitza_voltage_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_spanning_2
             name: L2-N
-          - entity: sensor.janitza_voltage_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_spanning_3
             name: L3-N
 
       - type: history-graph
         title: Stroom per fase
         hours_to_show: 24
         entities:
-          - entity: sensor.janitza_current_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_stroom
             name: L1
-          - entity: sensor.janitza_current_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_stroom_2
             name: L2
-          - entity: sensor.janitza_current_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_stroom_3
             name: L3
 
       - type: history-graph
         title: Vermogen
         hours_to_show: 24
         entities:
-          - entity: sensor.janitza_active_power_total
+          - entity: sensor.umg_604_pro_192_168_1_30_actief_vermogen_totaal
             name: Actief
-          - entity: sensor.janitza_reactive_power_total
+          - entity: sensor.umg_604_pro_192_168_1_30_reactief_vermogen
             name: Reactief
-          - entity: sensor.janitza_apparent_power_total
+          - entity: sensor.umg_604_pro_192_168_1_30_schijnbaar_vermogen
             name: Schijnbaar
 
       - type: history-graph
         title: Netkwaliteit
         hours_to_show: 24
         entities:
-          - entity: sensor.janitza_frequency
+          - entity: sensor.umg_604_pro_192_168_1_30_frequentie
             name: Frequentie
-          - entity: sensor.janitza_voltage_unbalance
+          - entity: sensor.umg_604_pro_192_168_1_30_spanningsonbalans
             name: Spanningsonbalans
-          - entity: sensor.janitza_current_unbalance
+          - entity: sensor.umg_604_pro_192_168_1_30_stroomonbalans
             name: Stroomonbalans
 
   - title: Netkwaliteit
@@ -190,7 +191,7 @@ views:
         cards:
           - type: gauge
             name: Spanningsonbalans
-            entity: sensor.janitza_voltage_unbalance
+            entity: sensor.umg_604_pro_192_168_1_30_spanningsonbalans
             min: 0
             max: 5
             severity:
@@ -199,7 +200,7 @@ views:
               red: 3
           - type: gauge
             name: Stroomonbalans
-            entity: sensor.janitza_current_unbalance
+            entity: sensor.umg_604_pro_192_168_1_30_stroomonbalans
             min: 0
             max: 30
             severity:
@@ -208,7 +209,7 @@ views:
               red: 20
           - type: gauge
             name: Power factor totaal
-            entity: sensor.janitza_power_factor_total
+            entity: sensor.umg_604_pro_192_168_1_30_vermogensfactor
             min: 0
             max: 1
             severity:
@@ -220,53 +221,53 @@ views:
         title: Cosinus phi
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_cos_phi_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_cosinus_phi_l1
             name: Cosinus phi L1
-          - entity: sensor.janitza_cos_phi_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_cosinus_phi_l2
             name: Cosinus phi L2
-          - entity: sensor.janitza_cos_phi_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_cosinus_phi_l3
             name: Cosinus phi L3
 
       - type: entities
         title: Power factor
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_power_factor_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_power_factor_l1
             name: Power factor L1
-          - entity: sensor.janitza_power_factor_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_power_factor_l2
             name: Power factor L2
-          - entity: sensor.janitza_power_factor_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_power_factor_l3
             name: Power factor L3
-          - entity: sensor.janitza_power_factor_average
+          - entity: sensor.umg_604_pro_192_168_1_30_gemiddelde_power_factor
             name: Gemiddelde power factor
 
       - type: entities
         title: THD spanning
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_thd_voltage_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_thd_spanning_l1
             name: THD spanning L1
-          - entity: sensor.janitza_thd_voltage_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_thd_spanning_l2
             name: THD spanning L2
-          - entity: sensor.janitza_thd_voltage_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_thd_spanning_l3
             name: THD spanning L3
 
       - type: entities
         title: THD/TDD stroom
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_thd_current_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_thd_stroom_l1
             name: THD stroom L1
-          - entity: sensor.janitza_thd_current_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_thd_stroom_l2
             name: THD stroom L2
-          - entity: sensor.janitza_thd_current_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_thd_stroom_l3
             name: THD stroom L3
           - type: divider
-          - entity: sensor.janitza_tdd_current_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_tdd_stroom_l1
             name: TDD stroom L1
-          - entity: sensor.janitza_tdd_current_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_tdd_stroom_l2
             name: TDD stroom L2
-          - entity: sensor.janitza_tdd_current_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_tdd_stroom_l3
             name: TDD stroom L3
 
   - title: Apparaat
@@ -279,66 +280,67 @@ views:
         title: Apparaatgegevens
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_device_name
+          - entity: sensor.umg_604_pro_192_168_1_30_apparaatnaam
             name: Apparaatnaam
-          - entity: sensor.janitza_device_description
+          - entity: sensor.umg_604_pro_192_168_1_30_apparaatomschrijving
             name: Apparaatomschrijving
-          - entity: sensor.janitza_serial_number
+          - entity: sensor.umg_604_pro_192_168_1_30_serienummer
             name: Serienummer
-          - entity: sensor.janitza_production_number
+          - entity: sensor.umg_604_pro_192_168_1_30_productienummer
             name: Productienummer
-          - entity: sensor.janitza_firmware
+          - entity: sensor.umg_604_pro_192_168_1_30_firmware
             name: Firmware
 
       - type: entities
         title: Status en tellers
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_phase_sequence
+          - entity: sensor.umg_604_pro_192_168_1_30_fasevolgorde
             name: Fasevolgorde
-          - entity: sensor.janitza_digital_input_1
+          - entity: sensor.umg_604_pro_192_168_1_30_digitale_ingang_1
             name: Digitale ingang 1
-          - entity: sensor.janitza_digital_input_2
+          - entity: sensor.umg_604_pro_192_168_1_30_digitale_ingang_2
             name: Digitale ingang 2
-          - entity: sensor.janitza_event_count
+          - entity: sensor.umg_604_pro_192_168_1_30_gebeurtenisteller
             name: Gebeurtenisteller
-          - entity: sensor.janitza_flag_count
+          - entity: sensor.umg_604_pro_192_168_1_30_flagteller
             name: Flagteller
-          - entity: sensor.janitza_transient_count
-            name: Transiëntteller
+          - entity: sensor.umg_604_pro_192_168_1_30_transientteller
+            name: TransiÃ«ntteller
 
       - type: entities
         title: Stroomtrafo-instellingen
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_ct_primary_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_stroomtrafo_primair_l1
             name: Primair L1
-          - entity: sensor.janitza_ct_primary_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_stroomtrafo_primair_l2
             name: Primair L2
-          - entity: sensor.janitza_ct_primary_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_stroomtrafo_primair_l3
             name: Primair L3
           - type: divider
-          - entity: sensor.janitza_ct_secondary_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_stroomtrafo_secundair_l1
             name: Secundair L1
-          - entity: sensor.janitza_ct_secondary_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_stroomtrafo_secundair_l2
             name: Secundair L2
-          - entity: sensor.janitza_ct_secondary_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_stroomtrafo_secundair_l3
             name: Secundair L3
 
       - type: entities
         title: Spanningstrafo-instellingen
         show_header_toggle: false
         entities:
-          - entity: sensor.janitza_vt_primary_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_spanningstrafo_primair_l1
             name: Primair L1
-          - entity: sensor.janitza_vt_primary_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_spanningstrafo_primair_l2
             name: Primair L2
-          - entity: sensor.janitza_vt_primary_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_spanningstrafo_primair_l3
             name: Primair L3
           - type: divider
-          - entity: sensor.janitza_vt_secondary_l1
+          - entity: sensor.umg_604_pro_192_168_1_30_spanningstrafo_secundair_l1
             name: Secundair L1
-          - entity: sensor.janitza_vt_secondary_l2
+          - entity: sensor.umg_604_pro_192_168_1_30_spanningstrafo_secundair_l2
             name: Secundair L2
-          - entity: sensor.janitza_vt_secondary_l3
+          - entity: sensor.umg_604_pro_192_168_1_30_spanningstrafo_secundair_l3
             name: Secundair L3
+
